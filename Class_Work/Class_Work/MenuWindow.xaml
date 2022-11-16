@@ -1,0 +1,59 @@
+﻿<Window x:Class="Class_Work.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Class_Work"
+        mc:Ignorable="d"
+        Title="MenuWindow" Height="700" Width="450">
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FF00249D" Offset="1"/>
+                <GradientStop Color="#FF0292E8" Offset="0.011"/>
+                <GradientStop Color="#FF6F2BA3" Offset="0.765"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Label x:Name="GameName" Content="air hockey" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="" Height="118" Width="322" FontSize="72" FontFamily="Ink Free" Margin="0,104,0,0" FontWeight="Bold" FontStyle="Normal" Background="#00000000">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF97FC00" Offset="0.144"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF00FCB8" Offset="0.306"/>
+                    <GradientStop Color="#FF207D7F" Offset="0.499"/>
+                    <GradientStop Color="#FF00A2DD" Offset="0.626"/>
+                    <GradientStop Color="#FFDDD2FF" Offset="0.802"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Button x:Name="NewGameButton" Content="New Game" HorizontalAlignment="Center" Margin="0,485,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontWeight="Normal" FontSize="24" Click="NewGameButton_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF00C3FF" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontSize="24">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF00C3FF" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Center" Margin="0,575,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontSize="24">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF00C3FF" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <ComboBox x:Name="LanguageSetting" Height="25" Width="50" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" SelectedIndex="1" SelectionChanged="LanguageSetting_SelectionChanged">
+            <ComboBoxItem x:Name="RusLang" Content="rus"/>
+            <ComboBoxItem x:Name="EngLang" Content="eng"/>
+        </ComboBox>
+        <Canvas/>
+    </Grid>
+</Window>

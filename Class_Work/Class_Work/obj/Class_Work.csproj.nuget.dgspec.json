@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TuF\\Documents\\GitHub\\CS_WPF\\Project\\Class_Work\\Class_Work\\Class_Work.csproj": {}
+    "C:\\Users\\TuF\\Documents\\GitHub\\CS_WPF_AirHockey\\Class_Work\\Class_Work\\Class_Work.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TuF\\Documents\\GitHub\\CS_WPF\\Project\\Class_Work\\Class_Work\\Class_Work.csproj": {
+    "C:\\Users\\TuF\\Documents\\GitHub\\CS_WPF_AirHockey\\Class_Work\\Class_Work\\Class_Work.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TuF\\Documents\\GitHub\\CS_WPF\\Project\\Class_Work\\Class_Work\\Class_Work.csproj",
+        "projectUniqueName": "C:\\Users\\TuF\\Documents\\GitHub\\CS_WPF_AirHockey\\Class_Work\\Class_Work\\Class_Work.csproj",
         "projectName": "Class_Work",
-        "projectPath": "C:\\Users\\TuF\\Documents\\GitHub\\CS_WPF\\Project\\Class_Work\\Class_Work\\Class_Work.csproj",
+        "projectPath": "C:\\Users\\TuF\\Documents\\GitHub\\CS_WPF_AirHockey\\Class_Work\\Class_Work\\Class_Work.csproj",
         "packagesPath": "C:\\Users\\TuF\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TuF\\Documents\\GitHub\\CS_WPF\\Project\\Class_Work\\Class_Work\\obj\\",
+        "outputPath": "C:\\Users\\TuF\\Documents\\GitHub\\CS_WPF_AirHockey\\Class_Work\\Class_Work\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\TuF\\AppData\\Roaming\\NuGet\\NuGet.Config",

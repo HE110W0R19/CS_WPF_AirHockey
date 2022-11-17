@@ -59,5 +59,75 @@ namespace Class_Work.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] BoardSound {
+            get {
+                object obj = ResourceManager.GetObject("BoardSound", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] GoalSound {
+            get {
+                object obj = ResourceManager.GetObject("GoalSound", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] MenuSelect {
+            get {
+                object obj = ResourceManager.GetObject("MenuSelect", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] MenuUnSelect {
+            get {
+                object obj = ResourceManager.GetObject("MenuUnSelect", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] StartGame {
+            get {
+                object obj = ResourceManager.GetObject("StartGame", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] StickSound {
+            get {
+                object obj = ResourceManager.GetObject("StickSound", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] StopGame {
+            get {
+                object obj = ResourceManager.GetObject("StopGame", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

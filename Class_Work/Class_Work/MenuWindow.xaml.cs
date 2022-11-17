@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
+using System.Media;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -52,7 +55,47 @@ namespace Class_Work
         private void NewGameButton_Click(object sender, RoutedEventArgs e)
         {
             new MainWindow().Show();
+            SoundPlay(3);
             this.Close();
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlay(1);
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlay(1);
+        }
+
+        private void SoundPlay(int SoundNum) 
+        {
+            switch (SoundNum)
+            {
+                case 1:
+                    using (MemoryStream fo = new MemoryStream(Properties.Resources.MenuSelect))
+                    using (GZipStream gz = new GZipStream(fo, CompressionMode.Decompress))
+                        new SoundPlayer(gz).Play();
+                    break;
+                case 2:
+                    using (MemoryStream fo = new MemoryStream(Properties.Resources.MenuUnSelect))
+                    using (GZipStream gz = new GZipStream(fo, CompressionMode.Decompress))
+                        new SoundPlayer(gz).Play();
+                    break;
+                case 3:
+                    using (MemoryStream fo = new MemoryStream(Properties.Resources.StartGame))
+                    using (GZipStream gz = new GZipStream(fo, CompressionMode.Decompress))
+                        new SoundPlayer(gz).Play();
+                    break;
+                case 4:
+                    using (MemoryStream fo = new MemoryStream(Properties.Resources.StopGame))
+                    using (GZipStream gz = new GZipStream(fo, CompressionMode.Decompress))
+                        new SoundPlayer(gz).Play();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

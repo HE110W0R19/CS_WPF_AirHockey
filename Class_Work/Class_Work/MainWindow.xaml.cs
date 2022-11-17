@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.IO.Compression;
+using System.Media;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -91,11 +94,10 @@ namespace Class_Work
         MousePlayer player1 = new MousePlayer("MousePlayer-1");
         KeyPlayer player2 = new KeyPlayer("KeyPlayer-2");
         HockeyPuck puck = new HockeyPuck();
-
+        
         private DispatcherTimer AnimationTimer = new DispatcherTimer();
         public MainWindow()
         {
-            
             bool IsBot = false;
             Canvas.SetBottom(this.player1.GStick, 100);
             Canvas.SetLeft(this.player1.GStick, 185);
@@ -187,24 +189,28 @@ namespace Class_Work
                     && ObjCordX < Canvas.GetLeft(tmp_puck.GPuck))
                 {
                     tmp_puck.SpeedX = -tmp_puck.SpeedX;
+                    SoundPlay(2);
                 }
 
                 else if (ObjCordX < Canvas.GetLeft(tmp_puck.GPuck) + tmp_puck.GPuck.Width + 10
                     && ObjCordX > Canvas.GetLeft(tmp_puck.GPuck) + tmp_puck.GPuck.Width)
                 {
                     tmp_puck.SpeedX = -tmp_puck.SpeedX;
+                    SoundPlay(2);
                 }
 
                 else if (ObjCordY > Canvas.GetTop(tmp_puck.GPuck) - 10
                     && ObjCordY < Canvas.GetTop(tmp_puck.GPuck))
                 {
                     tmp_puck.SpeedY = -tmp_puck.SpeedY;
+                    SoundPlay(2);
                 }
 
                 else if (ObjCordY < Canvas.GetTop(tmp_puck.GPuck) + tmp_puck.GPuck.Height + 10
                     && ObjCordY > Canvas.GetTop(tmp_puck.GPuck) + tmp_puck.GPuck.Height)
                 {
                     tmp_puck.SpeedY = -tmp_puck.SpeedY;
+                    SoundPlay(2);
                 }
             }
         }
@@ -225,17 +231,20 @@ namespace Class_Work
             if (this.puck.CurrentPosX <= 0.0 || this.puck.CurrentPosX >= Game.ActualWidth - puck.GPuck.Width)
             {
                 puck.SpeedX = -puck.SpeedX;
+                SoundPlay(1);
             }
 
             if (this.puck.CurrentPosY <= 0.0 || this.puck.CurrentPosY >= Game.ActualHeight - puck.GPuck.Width)
             {
                 puck.SpeedY = -puck.SpeedY;
+                SoundPlay(1);
             }
 
             if (this.puck.CurrentPosY >= -10 && this.puck.CurrentPosY <= 10
                 && this.puck.CurrentPosX >= Canvas.GetLeft(UpGates) -10
                 && this.puck.CurrentPosX <= Canvas.GetLeft(UpGates) + this.UpGates.Width + 10)
             {
+                SoundPlay(3);
                 ++player1.Points;
                 DownPlayerScore.Content = player1.Points.ToString();
                 Canvas.SetLeft(puck.GPuck, puck.GBeginPosX);
@@ -249,6 +258,7 @@ namespace Class_Work
                 && this.puck.CurrentPosX >= Canvas.GetLeft(DownGates) - 10
                 && this.puck.CurrentPosX <= Canvas.GetLeft(DownGates) + this.UpGates.Width + 10)
             {
+                SoundPlay(3);
                 ++player2.Points;
                 UpPlayerScore.Content = player2.Points.ToString();
                 Canvas.SetLeft(puck.GPuck, puck.GBeginPosX);
@@ -275,6 +285,29 @@ namespace Class_Work
             }
             puck.SpeedX *= 1.001;
             puck.SpeedY *= 1.001;
+        }
+        private void SoundPlay(int SoundNum)
+        {
+            switch (SoundNum)
+            {
+                case 1:
+                    using (MemoryStream fo = new MemoryStream(Properties.Resources.BoardSound))
+                    using (GZipStream gz = new GZipStream(fo, CompressionMode.Decompress))
+                        new SoundPlayer(gz).Play();
+                    break;
+                case 2:
+                    using (MemoryStream fo = new MemoryStream(Properties.Resources.StickSound))
+                    using (GZipStream gz = new GZipStream(fo, CompressionMode.Decompress))
+                        new SoundPlayer(gz).Play();
+                    break;
+                case 3:
+                    using (MemoryStream fo = new MemoryStream(Properties.Resources.GoalSound))
+                    using (GZipStream gz = new GZipStream(fo, CompressionMode.Decompress))
+                        new SoundPlayer(gz).Play();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

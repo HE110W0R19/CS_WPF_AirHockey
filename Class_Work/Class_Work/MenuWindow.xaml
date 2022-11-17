@@ -34,7 +34,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontSize="24">
+        <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontSize="24" Click="SettingsButton_Click">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="1"/>
@@ -42,7 +42,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Center" Margin="0,575,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontSize="24">
+        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Center" Margin="0,575,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontSize="24" Click="ExitButton_Click">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="1"/>
@@ -54,6 +54,5 @@
             <ComboBoxItem x:Name="RusLang" Content="rus"/>
             <ComboBoxItem x:Name="EngLang" Content="eng"/>
         </ComboBox>
-        <Canvas/>
     </Grid>
 </Window>

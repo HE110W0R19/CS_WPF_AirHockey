@@ -117,4 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BoardSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BoardSound.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GoalSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GoalSound.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MenuSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuSelect.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MenuUnSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuUnSelect.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StartGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StartGame.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StickSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StickSound.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StopGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StopGame.gz;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

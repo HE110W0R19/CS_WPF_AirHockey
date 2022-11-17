@@ -8,13 +8,18 @@
 
   <ItemGroup>
     <Compile Remove="media\**" />
+    <Compile Remove="sounds\**" />
     <EmbeddedResource Remove="media\**" />
+    <EmbeddedResource Remove="sounds\**" />
     <None Remove="media\**" />
+    <None Remove="sounds\**" />
     <Page Remove="media\**" />
+    <Page Remove="sounds\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="BackGround1.bmp" />
+    <None Remove="BoardSound.mpeg" />
     <None Remove="images\BackGround.bmp" />
     <None Remove="images\BackGround.png" />
     <None Remove="images\BackGround1.bmp" />

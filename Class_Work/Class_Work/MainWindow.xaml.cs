@@ -2,6 +2,7 @@
 using System.IO;
 using System.IO.Compression;
 using System.Media;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -14,7 +15,7 @@ namespace Class_Work
 {
     class HockeyPuck
     {
-        Ellipse Puck = new Ellipse();
+        Rectangle Puck = new Rectangle();
         public double BeginSpeedX = 140;
         public double BeginSpeedY = 220;
         public double SpeedX = 140;
@@ -38,7 +39,7 @@ namespace Class_Work
             Canvas.SetLeft(this.Puck, PuckStartPosX);
             Canvas.SetTop(this.Puck, PuckStartPosY);
         }
-        public Ellipse GPuck => this.Puck;
+        public Rectangle GPuck => this.Puck;
         public double GBeginPosX => PuckStartPosX;
         public double GbeginPosY => PuckStartPosY;
     }
@@ -51,6 +52,7 @@ namespace Class_Work
         protected Rectangle Stick = new Rectangle();
         protected string PlayerName = "";
         public Rectangle GStick => this.Stick;
+        public string GName => this.PlayerName;
     }
 
     class MousePlayer : AbstractPlayer
@@ -59,7 +61,7 @@ namespace Class_Work
         public double MouseCordY = 0;
         public MousePlayer(string Name)
         {
-            this.PlayerName = Name;
+            this.PlayerName = Name.ToString();
             Stick.Height = StickHeight;
             Stick.Width = StickWidth;
             Stick.Stroke = Brushes.Black;
@@ -75,7 +77,7 @@ namespace Class_Work
         public double KeyCordY = 0;
         public KeyPlayer(string Name)
         {
-            this.PlayerName = Name;
+            this.PlayerName = Name.ToString();
             Stick.Height = StickHeight;
             Stick.Width = StickWidth;
             Stick.Stroke = Brushes.Black;
@@ -91,37 +93,59 @@ namespace Class_Work
     /// </summary>
     public partial class MainWindow : Window
     {
-        MousePlayer player1 = new MousePlayer("MousePlayer-1");
-        KeyPlayer player2 = new KeyPlayer("KeyPlayer-2");
+        MousePlayer player1;
+        KeyPlayer player2;
         HockeyPuck puck = new HockeyPuck();
-        
+        int GameMod, Time, MaxScore;
         private DispatcherTimer AnimationTimer = new DispatcherTimer();
-        public MainWindow()
+        public MainWindow(bool CanvasStyle, int GameModIndex, int Time, int WinScore, 
+            SolidColorBrush TopStickColor, SolidColorBrush BottomStickColor )
         {
-            bool IsBot = false;
+            InitializeComponent();
+            this.GameMod = GameModIndex;
+            this.MaxScore = WinScore;
+            if (this.GameMod == 0)
+            {
+                player1 = new MousePlayer("MPlayer");
+            }
+            else if (this.GameMod == 1)
+            {
+                player1 = new MousePlayer("MPlayer");
+                player2 = new KeyPlayer("KPlayer");
+
+                Game.Children.Add(player2.GStick);
+                Canvas.SetTop(this.player2.GStick, 100);
+                Canvas.SetLeft(this.player2.GStick, 185);
+                this.UpPlayerName.Content = $"Player: {player2.GName}";
+                AnimationTimer.Tick += Bot_Move;
+            }
+            else if (this.GameMod == 2)
+            {
+                player1 = new MousePlayer("MPlayer");
+                player2 = new KeyPlayer("KPlayer");
+
+                Game.Children.Add(player2.GStick);
+                Canvas.SetTop(this.player2.GStick, 100);
+                Canvas.SetLeft(this.player2.GStick, 185);
+                this.UpPlayerName.Content = $"Player: {player2.GName}";
+                this.KeyDown += Key_Move;
+            }
+
+            this.DownPlayerName.Content = $"Player: {player1.GName}";
+
             Canvas.SetBottom(this.player1.GStick, 100);
             Canvas.SetLeft(this.player1.GStick, 185);
 
-            Canvas.SetTop(this.player2.GStick, 100);
-            Canvas.SetLeft(this.player2.GStick, 185);
-
             this.MouseMove += Move_mouse;
 
-            
-            InitializeComponent();
             Game.Children.Add(player1.GStick);
-            Game.Children.Add(player2.GStick);
             Game.Children.Add(puck.GPuck);
 
             //AnimationTimer Initialization
             AnimationTimer.Interval = TimeSpan.FromSeconds(0.05);
             AnimationTimer.Tick += Anim;
             AnimationTimer.Start();
-
-            if (IsBot == true)
-                AnimationTimer.Tick += Bot_Move;
-            else
-                this.KeyDown += Key_Move;
+            
         }
 
         private void MoveMouseLogick(MouseEventArgs e, MousePlayer MPlayer)
@@ -170,14 +194,14 @@ namespace Class_Work
 
         private void BotMoveLogick(KeyPlayer BBot)
         {
-            
+
             Canvas.SetTop(player2.GStick, player2.KeyCordY);
             Canvas.SetLeft(player2.GStick, player2.KeyCordX);
         }
 
-        private void Bot_Move(object sender, EventArgs e) 
+        private void Bot_Move(object sender, EventArgs e)
         {
-            BotMoveLogick(player2); 
+            BotMoveLogick(player2);
         }
 
         private void AnimLogic(HockeyPuck tmp_puck, double ObjCordX, double ObjCordY)
@@ -185,28 +209,28 @@ namespace Class_Work
             if (ObjCordX > Canvas.GetLeft(puck.GPuck) - 10 && ObjCordX < Canvas.GetLeft(puck.GPuck) + puck.GPuck.Width + 10 &&
                 ObjCordY > Canvas.GetTop(puck.GPuck) - 10 && ObjCordY < Canvas.GetTop(puck.GPuck) + puck.GPuck.Height + 10)
             {
-                if (ObjCordX > Canvas.GetLeft(tmp_puck.GPuck) + 10
+                if (ObjCordX > Canvas.GetLeft(tmp_puck.GPuck) - 30
                     && ObjCordX < Canvas.GetLeft(tmp_puck.GPuck))
                 {
                     tmp_puck.SpeedX = -tmp_puck.SpeedX;
                     SoundPlay(2);
                 }
 
-                else if (ObjCordX < Canvas.GetLeft(tmp_puck.GPuck) + tmp_puck.GPuck.Width + 10
+                else if (ObjCordX < Canvas.GetLeft(tmp_puck.GPuck) + tmp_puck.GPuck.Width + 30
                     && ObjCordX > Canvas.GetLeft(tmp_puck.GPuck) + tmp_puck.GPuck.Width)
                 {
                     tmp_puck.SpeedX = -tmp_puck.SpeedX;
                     SoundPlay(2);
                 }
 
-                else if (ObjCordY > Canvas.GetTop(tmp_puck.GPuck) - 10
+                else if (ObjCordY > Canvas.GetTop(tmp_puck.GPuck) - 30
                     && ObjCordY < Canvas.GetTop(tmp_puck.GPuck))
                 {
                     tmp_puck.SpeedY = -tmp_puck.SpeedY;
                     SoundPlay(2);
                 }
 
-                else if (ObjCordY < Canvas.GetTop(tmp_puck.GPuck) + tmp_puck.GPuck.Height + 10
+                else if (ObjCordY < Canvas.GetTop(tmp_puck.GPuck) + tmp_puck.GPuck.Height + 30
                     && ObjCordY > Canvas.GetTop(tmp_puck.GPuck) + tmp_puck.GPuck.Height)
                 {
                     tmp_puck.SpeedY = -tmp_puck.SpeedY;
@@ -226,7 +250,8 @@ namespace Class_Work
                 AnimLogic(puck, this.player1.MouseCordX, this.player1.MouseCordY);
             }
 
-            AnimLogic(puck, this.player2.KeyCordX, this.player2.KeyCordY);
+            if (this.GameMod > 1)
+                AnimLogic(puck, this.player2.KeyCordX, this.player2.KeyCordY);
 
             if (this.puck.CurrentPosX <= 0.0 || this.puck.CurrentPosX >= Game.ActualWidth - puck.GPuck.Width)
             {
@@ -241,12 +266,22 @@ namespace Class_Work
             }
 
             if (this.puck.CurrentPosY >= -10 && this.puck.CurrentPosY <= 10
-                && this.puck.CurrentPosX >= Canvas.GetLeft(UpGates) -10
+                && this.puck.CurrentPosX >= Canvas.GetLeft(UpGates) - 10
                 && this.puck.CurrentPosX <= Canvas.GetLeft(UpGates) + this.UpGates.Width + 10)
             {
                 SoundPlay(3);
-                ++player1.Points;
-                DownPlayerScore.Content = player1.Points.ToString();
+                if (GameMod > 1)
+                {
+                    ++player1.Points;
+                    EndGame(MaxScore, player1.Points, player2.Points);
+                    DownPlayerScore.Content = player1.Points.ToString();
+                }
+                else
+                {
+                    ++player1.Points;
+                    EndGame(MaxScore, player1.Points);
+                    DownPlayerScore.Content = player1.Points.ToString();
+                }
                 Canvas.SetLeft(puck.GPuck, puck.GBeginPosX);
                 Canvas.SetTop(puck.GPuck, puck.GbeginPosY);
                 this.puck.SpeedX = this.puck.BeginSpeedX;
@@ -259,8 +294,18 @@ namespace Class_Work
                 && this.puck.CurrentPosX <= Canvas.GetLeft(DownGates) + this.UpGates.Width + 10)
             {
                 SoundPlay(3);
-                ++player2.Points;
-                UpPlayerScore.Content = player2.Points.ToString();
+                if (GameMod > 1)
+                {
+                    ++this.player2.Points;
+                    UpPlayerScore.Content = this.player2.Points.ToString();
+                    EndGame(MaxScore, player1.Points, player2.Points);
+                }
+                else
+                {
+                    --this.player1.Points;
+                    DownPlayerScore.Content = this.player1.Points.ToString();
+                    EndGame(MaxScore, player1.Points);
+                }
                 Canvas.SetLeft(puck.GPuck, puck.GBeginPosX);
                 Canvas.SetTop(puck.GPuck, puck.GbeginPosY);
                 this.puck.SpeedX = this.puck.BeginSpeedX;
@@ -305,9 +350,47 @@ namespace Class_Work
                     using (GZipStream gz = new GZipStream(fo, CompressionMode.Decompress))
                         new SoundPlayer(gz).Play();
                     break;
+                case 4:
+                    using (MemoryStream fo = new MemoryStream(Properties.Resources.StopGame))
+                    using (GZipStream gz = new GZipStream(fo, CompressionMode.Decompress))
+                        new SoundPlayer(gz).Play();
+                    break;
                 default:
                     break;
             }
+        }
+
+        public void EndGame(int Max, int BottomPlayerPoints, int TopPlayerPoints = 0)
+        {
+            if (BottomPlayerPoints == Max)
+            {
+                BottomWinner.Visibility = Visibility.Visible;
+                TopLose.Visibility = Visibility.Visible;
+                AnimationTimer.Stop();
+                this.AnimationTimer.Tick -= Bot_Move;
+                this.MouseMove -= Move_mouse;
+                this.KeyDown -= Key_Move;
+            }
+            else if (TopPlayerPoints == Max)
+            {
+                BottomLose.Visibility = Visibility.Visible;
+                TopWinner.Visibility = Visibility.Visible;
+                AnimationTimer.Stop();
+                this.AnimationTimer.Tick -= Bot_Move;
+                this.MouseMove -= Move_mouse;
+                this.KeyDown -= Key_Move;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new MenuWindow().Show();
+            SoundPlay(4);
+            AnimationTimer.Stop();
+            this.AnimationTimer.Tick -= Bot_Move;
+            this.MouseMove -= Move_mouse;
+            this.KeyDown -= Key_Move;
+            this.Close();
         }
     }
 }

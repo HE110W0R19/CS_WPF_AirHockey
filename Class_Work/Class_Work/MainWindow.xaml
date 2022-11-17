@@ -9,24 +9,6 @@
     <Window.Background>
         <ImageBrush ImageSource="/BackGround1.bmp"/>
     </Window.Background>
-    <!--<Grid x:Name="Game">
-        <Grid.Background>
-            <ImageBrush ImageSource="/images/BackGround.png"/>
-        </Grid.Background>
-        -->
-    <!--<Border x:Name="Puck" CornerRadius="100" BorderBrush="Black" BorderThickness="1"
-        VerticalAlignment="Center" Height="50" Width="50">
-            <Border.Background>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF00B008" Offset="1"/>
-                    <GradientStop Color="#FFBDFF00" Offset="0"/>
-                </RadialGradientBrush>
-            </Border.Background>
-        </Border>-->
-    <!--<Border x:Name="Player" CornerRadius="100" BorderBrush="Black" BorderThickness="2" Height="72" Width="72"/>-->
-    <!--<Border x:Name="Bot" CornerRadius="100" BorderBrush="Black" BorderThickness="2" Height="72" Width="72"/>-->
-    <!--
-    </Grid>-->
     <Canvas Name="Game" Margin="10,47,10,45">
         <Label Name="Cords" Canvas.Left="-1" Canvas.Top="-18"/>
         <Label Name="MouseCords" Canvas.Left="-1" Canvas.Top="-28"/>
@@ -56,8 +38,144 @@
         </Label>
         <Label x:Name="UpPlayerScore" Content="0" Canvas.Left="4" Canvas.Top="222" Foreground="#FF9000FF" Height="62" Width="66" FontSize="40" FontFamily="MV Boli" FontWeight="Normal" FontStyle="Normal"/>
         <Label x:Name="DownPlayerScore" Content="0" Canvas.Left="4" Canvas.Top="273" Foreground="#FF9000FF" Height="62" Width="66" FontSize="40" FontFamily="MV Boli" FontWeight="Normal" FontStyle="Normal"/>
-        <!--<Ellipse x:Name="Puck" Height="50" Width="50" Canvas.Left="195" Canvas.Top="305" Fill="GreenYellow" Stroke="Black"/>
-        <Rectangle x:Name="Player1" Height="72" Width="72" RadiusX="100" RadiusY="100" Canvas.Top="100" Canvas.Left="185" Fill="Magenta" Stroke="Black"/>
-        <Rectangle x:Name="Player2" Height="72" Width="72" RadiusX="100" RadiusY="100" Canvas.Bottom="100" Canvas.Left="185"  Fill="Orange" Stroke="Black"/>-->
+        <Button Content="Menu" Canvas.Left="-1" Canvas.Top="579" Width="71" Height="23" FontFamily="MV Boli" FontSize="16" FontStyle="Normal" Foreground="Black" BorderBrush="#FF3D00FF" Click="Button_Click">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF00C3FF" Offset="1"/>
+                    <GradientStop Color="White"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="DownPlayerName" Content="Player: " Canvas.Left="261" Canvas.Top="573" Width="147" BorderBrush="#FF030303" Foreground="Black" FontSize="14" FontFamily="MV Boli" FontWeight="Bold"/>
+        <Label x:Name="UpPlayerName" Content="Player: " Canvas.Left="261" Canvas.Top="-36" Width="147" BorderBrush="#FF030303" Foreground="Black" FontSize="14" FontFamily="MV Boli" FontWeight="Bold"/>
+        <Label x:Name="TopWinner" Canvas.Left="4" Height="284" Width="404" Visibility="Hidden">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#4CFFFFFF" Offset="1"/>
+                    <GradientStop Color="#7F00FF1F" Offset="0"/>
+                </LinearGradientBrush>
+            </Label.Background>
+            <TextBlock Text="!!! Winner !!!" Padding="0,0,0,3" VerticalAlignment="Center" HorizontalAlignment="Left" Height="137" Margin="55,120,0,0" RenderTransformOrigin="0.5,0.5" FontSize="48" FontFamily="Comic Sans MS" FontStyle="Italic">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD0FF00" Offset="0"/>
+                        <GradientStop Color="#FFFF00E5" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+                <TextBlock.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform AngleX="-3"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.LayoutTransform>
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-17" AngleY="13"/>
+                        <RotateTransform Angle="-21.371"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </Label>
+        <Label x:Name="BottomWinner" Canvas.Left="4" Height="278" Width="404" Canvas.Top="290" Foreground="#FFD900FF" FontSize="48" FontStyle="Italic" FontStretch="Normal" FontWeight="Normal" FontFamily="Comic Sans MS" Visibility="Hidden">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#4CFFFFFF" Offset="0"/>
+                    <GradientStop Color="#7F00FF1F" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+            <TextBlock Text="!!! Winner !!!" Padding="0,0,0,3" VerticalAlignment="Center" HorizontalAlignment="Left" Height="137" Margin="55,120,0,0" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD0FF00"/>
+                        <GradientStop Color="#FFFF00E5" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+                <TextBlock.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform AngleX="-3"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.LayoutTransform>
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-17" AngleY="13"/>
+                        <RotateTransform Angle="-21.371"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </Label>
+
+        <Label x:Name="TopLose" Canvas.Left="4" Height="284" Width="404" Visibility="Hidden">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#4CFFFFFF" Offset="1"/>
+                    <GradientStop Color="#7FFF0000" Offset="0"/>
+                </LinearGradientBrush>
+            </Label.Background>
+            <TextBlock Text="!!! Lose !!!" Padding="0,0,0,3" VerticalAlignment="Center" HorizontalAlignment="Left" Height="137" Margin="90,120,0,0" RenderTransformOrigin="0.5,0.5" FontSize="48" FontFamily="Comic Sans MS" FontStyle="Italic">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Red"/>
+                        <GradientStop Color="#FF007AFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+                <TextBlock.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform AngleX="-3"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.LayoutTransform>
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-17" AngleY="13"/>
+                        <RotateTransform Angle="-21.371"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </Label>
+        <Label x:Name="BottomLose" Canvas.Left="4" Height="278" Width="404" Canvas.Top="290" Foreground="#FFD900FF" FontSize="48" FontStyle="Italic" FontStretch="Normal" FontWeight="Normal" FontFamily="Comic Sans MS" Visibility="Hidden">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#4CFFFFFF" Offset="0"/>
+                    <GradientStop Color="#7FFF0000" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+            <TextBlock Text="!!! Lose !!!" Padding="0,0,0,3" VerticalAlignment="Center" HorizontalAlignment="Left" Height="137" Margin="90,120,0,0" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Red"/>
+                        <GradientStop Color="#FF007AFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+                <TextBlock.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform AngleX="-3"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.LayoutTransform>
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-17" AngleY="13"/>
+                        <RotateTransform Angle="-21.371"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </Label>
     </Canvas>
 </Window>

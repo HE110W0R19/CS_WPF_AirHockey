@@ -26,7 +26,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Button x:Name="NewGameButton" Content="New Game" HorizontalAlignment="Center" Margin="0,485,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontWeight="Normal" FontSize="24" Click="NewGameButton_Click">
+        <Button x:Name="NewGameButton" Content="New Game" HorizontalAlignment="Center" Margin="0,485,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontWeight="Normal" FontSize="24" Click="NewGameButton_Click" Visibility="Visible">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="1"/>
@@ -34,7 +34,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontSize="24" Click="SettingsButton_Click">
+        <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontSize="24" Click="SettingsButton_Click" Visibility="Visible">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="1"/>
@@ -42,7 +42,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Center" Margin="0,575,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontSize="24" Click="ExitButton_Click">
+        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Center" Margin="0,575,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontSize="24" Click="ExitButton_Click" Visibility="Visible">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="1"/>
@@ -54,5 +54,97 @@
             <ComboBoxItem x:Name="RusLang" Content="rus"/>
             <ComboBoxItem x:Name="EngLang" Content="eng"/>
         </ComboBox>
+        <Label x:Name="LabelCanvasStyle" Content="Canvas style:" HorizontalAlignment="Left" Margin="65,239,0,0" VerticalAlignment="Top" Height="37" FontFamily="Comic Sans MS" FontSize="20" Visibility="Hidden"/>
+        <CheckBox x:Name="DefaultCanvas" Content="Default" HorizontalAlignment="Left" Margin="282,250,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Checked="DefaultCanvas_Checked" Visibility="Hidden"/>
+        <CheckBox x:Name="RealisticCanvas" Content="Realistic" HorizontalAlignment="Left" Margin="200,250,0,0" VerticalAlignment="Top" FontSize="16" Checked="RealisticCanvas_Checked" Visibility="Hidden"/>
+        <Label x:Name="LabelGameModes" Content="Game modes: " HorizontalAlignment="Left" Margin="64,278,0,0" VerticalAlignment="Top" Height="37" FontFamily="Comic Sans MS" FontSize="20" Visibility="Hidden"/>
+        <ComboBox x:Name="GameModBox" HorizontalAlignment="Left" Margin="200,288,0,0" VerticalAlignment="Top" Width="133" SelectionChanged="GameModBox_SelectionChanged" Visibility="Hidden">
+            <ComboBoxItem Content="One Player" IsSelected="True"/>
+            <ComboBoxItem Content="Bot vs Player(Mouse)" />
+            <ComboBoxItem Content="1(Key) VS 1(Mouse)" />
+        </ComboBox>
+        <Label x:Name="LabelTopPlayer" Content="Top player: " HorizontalAlignment="Left" Margin="94,432,0,0" VerticalAlignment="Top" Height="43" FontFamily="Comic Sans MS" FontSize="18" Visibility="Hidden"/>
+        <Label x:Name="LabelBottomPLayer" Content="Bottom player: " HorizontalAlignment="Left" Margin="64,461,0,0" VerticalAlignment="Top" Height="37" FontFamily="Comic Sans MS" FontSize="18" Visibility="Hidden"/>
+        <Label x:Name="LabelGameSettings" Content="Game settings" HorizontalAlignment="Left" Margin="149,195,0,0" VerticalAlignment="Top" Height="44" FontFamily="Comic Sans MS" FontSize="24" Width="185" Visibility="Hidden"/>
+        <Label x:Name="LabelPlayerSettings" Content="Player settings" HorizontalAlignment="Left" Margin="149,382,0,0" VerticalAlignment="Top" Height="46" FontFamily="Comic Sans MS" FontSize="24" Visibility="Hidden"/>
+        <ComboBox x:Name="TopPlayerColor" HorizontalAlignment="Left" Margin="200,438,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="TopPlayerColor_SelectionChanged" Visibility="Hidden">
+            <ComboBoxItem>
+                <TextBlock Text="Red">
+                    <Label Content="" Background="Red" Height="10" Width="10"/>
+                </TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Yellow">
+                    <Label Content="" Background="Yellow" Height="10" Width="10"/>
+                </TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Green">
+                    <Label Content="" Background="Lime" Height="10" Width="10"/>
+                </TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Blue">
+                    <Label Content="" Background="Blue" Height="10" Width="10"/>
+                </TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Magenta">
+                    <Label Content="" Background="Magenta" Height="10" Width="10"/>
+                </TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem Content="Transparent" IsSelected="True"/>
+        </ComboBox>
+        <ComboBox x:Name="BottomPlayerColor" HorizontalAlignment="Left" Margin="200,469,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="BottomPlayerColor_SelectionChanged" Visibility="Hidden">
+            <ComboBoxItem>
+                <TextBlock Text="Red">
+                    <Label Content="" Background="Red" Height="10" Width="10"/>
+                </TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Yellow">
+                    <Label Content="" Background="Yellow" Height="10" Width="10"/>
+                </TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Green">
+                    <Label Content="" Background="Lime" Height="10" Width="10"/>
+                </TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Blue">
+                    <Label Content="" Background="Blue" Height="10" Width="10"/>
+                </TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Magenta">
+                    <Label Content="" Background="Magenta" Height="10" Width="10"/>
+                </TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem Content="Transparent" IsSelected="True"/>
+        </ComboBox>
+        <Button x:Name="SaveSettingsButton" Content="Save" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontWeight="Normal" FontSize="24" Click="SaveSettingButton_Click" Visibility="Hidden">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF00C3FF" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="GoBackButton" Content="GoBack" HorizontalAlignment="Center" Margin="0,575,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontSize="24" Click="GoBackButton_Click" Visibility="Hidden">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF00C3FF" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Label x:Name="SettingIsSaved" Content="Settings saved..." HorizontalAlignment="Center" Margin="0,494,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#4CFF00C0" Visibility="Hidden" FontSize="16" FontFamily="MV Boli"/>
+        <Label x:Name="LabelGameTimer" Content="Game timer: " HorizontalAlignment="Left" Margin="71,315,0,0" VerticalAlignment="Top" Height="37" FontFamily="Comic Sans MS" FontSize="20" Visibility="Hidden"/>
+        <Label x:Name="LabelGameMaxScore" Content="Win score: " HorizontalAlignment="Left" Margin="84,345,0,0" VerticalAlignment="Top" Height="37" FontFamily="Comic Sans MS" FontSize="20" Visibility="Hidden"/>
+        <TextBox x:Name="GameTimerTB" HorizontalAlignment="Left" Margin="200,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="37" Background="#FFE5E5E5" OpacityMask="#FFACACAC" FontSize="14" Text="60" TextAlignment="Center" Visibility="Hidden" TextChanged="GameTimerTB_TextChanged"/>
+        <Label x:Name="LabelSecInfo" Content="/sec" HorizontalAlignment="Left" Margin="237,318,0,0" VerticalAlignment="Top" Height="29" Width="49" FontSize="16" Visibility="Hidden"/>
+        <TextBox x:Name="GameScoreTB" HorizontalAlignment="Left" Margin="200,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="37" Background="#FFE5E5E5" OpacityMask="#FFACACAC" FontSize="14" Text="10" TextAlignment="Center" Visibility="Hidden" TextChanged="GameScoreTB_textChanged"/>
+        <Label x:Name="LabelMaxCount" Content="(30 - max)" HorizontalAlignment="Left" Margin="237,345,0,0" VerticalAlignment="Top" Height="29" Width="81" FontSize="16" Visibility="Hidden"/>
     </Grid>
 </Window>

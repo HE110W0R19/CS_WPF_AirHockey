@@ -46,8 +46,8 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <Label x:Name="DownPlayerName" Content="Player: " Canvas.Left="261" Canvas.Top="573" Width="147" BorderBrush="#FF030303" Foreground="Black" FontSize="14" FontFamily="MV Boli" FontWeight="Bold"/>
-        <Label x:Name="UpPlayerName" Content="Player: " Canvas.Left="261" Canvas.Top="-36" Width="147" BorderBrush="#FF030303" Foreground="Black" FontSize="14" FontFamily="MV Boli" FontWeight="Bold"/>
+        <Label x:Name="DownPlayerName" Canvas.Left="112" Width="192" BorderBrush="#FF030303" Foreground="#7F000000" FontFamily="MV Boli" FontWeight="Bold" FlowDirection="LeftToRight" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Height="30" Canvas.Top="481" Content="" Background="Transparent" FontSize="16"/>
+        <Label x:Name="UpPlayerName" Canvas.Left="110" Canvas.Top="53" Width="192" BorderBrush="#FF030303" Foreground="#7F000000" FontFamily="MV Boli" FontWeight="Bold" FlowDirection="LeftToRight" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Height="30" FontSize="16"/>
         <Label x:Name="TopWinner" Canvas.Left="4" Height="284" Width="404" Visibility="Hidden">
             <Label.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

@@ -15,6 +15,7 @@ namespace Class_Work
     /// </summary>
     public partial class MenuWindow : Window
     {
+        private bool IsMenu = false;
         private bool IsDefaultCanvas = true;
         private int GameModIndex = 0;
         private int GameSecTimer = 0;
@@ -38,6 +39,32 @@ namespace Class_Work
             this.NewGameButton.Content = LangResource.New_Game;
             this.SettingsButton.Content = LangResource.Settings;
             this.ExitButton.Content = LangResource.Exit;
+            if (IsMenu == true)
+            {
+                this.SaveSettingsButton.Content = LangResource.Save;
+                this.GoBackButton.Content = LangResource.GoBack;
+                this.LabelGameSettings.Content = LangResource.Game_settings;
+                this.LabelPlayerSettings.Content = LangResource.Player_settings;
+                this.LabelCanvasStyle.Content = LangResource.Canvas_style;
+                this.LabelGameModes.Content = LangResource.Game_modes;
+                this.LabelGameTimer.Content = LangResource.Game_timer;
+                this.LabelGameMaxScore.Content = LangResource.Win_score;
+                this.LabelTopPlayer.Content = LangResource.Top_player;
+                this.LabelBottomPLayer.Content = LangResource.Bottom_player;
+                this.RealisticCanvas.Content = LangResource.Realistic;
+                this.DefaultCanvas.Content = LangResource.Default;
+                this.GameModBox.Items[0] = LangResource.One_player;
+                this.GameModBox.SelectedIndex = 0;
+                this.GameModBox.Items[1] = LangResource.Bot_vs_Player_Mouse_;
+                this.GameModBox.Items[2] = LangResource._1_Key__VS_1_mouse_;
+                this.LabelSecInfo.Content = LangResource._sec;
+                this.LabelMaxCount.Content = LangResource._30___max_;
+                this.SettingIsSaved.Content = LangResource.Settings_saved___;
+                this.BottomPlayerColor.Items[5] = LangResource.Transparent;
+                this.BottomPlayerColor.SelectedIndex = 5;
+                this.TopPlayerColor.Items[5] = LangResource.Transparent;
+                this.TopPlayerColor.SelectedIndex = 5;
+            }
         }
 
         private void ButtonAnim(System.Windows.Controls.Button button_click)
@@ -52,6 +79,7 @@ namespace Class_Work
 
         private void LanguageSetting_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            SoundPlay(1);
             switch (LanguageSetting.SelectedIndex)
             {
                 case 0:
@@ -103,6 +131,7 @@ namespace Class_Work
             this.GameScoreTB.Visibility = Visibility.Visible;
             this.TopPlayerColor.Visibility = Visibility.Visible;
             this.BottomPlayerColor.Visibility = Visibility.Visible;
+            this.IsMenu = true;
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -192,27 +221,29 @@ namespace Class_Work
 
         private void BottomPlayerColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            SoundPlay(1);
         }
 
         private void TopPlayerColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            SoundPlay(1);
         }
 
         private void GameModBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            SoundPlay(1);
         }
 
         private void RealisticCanvas_Checked(object sender, RoutedEventArgs e)
         {
+            SoundPlay(1);
             this.DefaultCanvas.IsChecked = false;
             this.IsDefaultCanvas = false;
         }
 
         private void DefaultCanvas_Checked(object sender, RoutedEventArgs e)
         {
+            SoundPlay(1);
             this.RealisticCanvas.IsChecked = false;
             this.IsDefaultCanvas = true;
         }
@@ -244,6 +275,7 @@ namespace Class_Work
             this.TopPlayerColor.Visibility = Visibility.Hidden;
             this.BottomPlayerColor.Visibility = Visibility.Hidden;
             this.SettingIsSaved.Visibility = Visibility.Hidden;
+            this.IsMenu = false;
         }
 
         private void GameTimerTB_TextChanged(object sender, TextChangedEventArgs e)

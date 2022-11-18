@@ -50,9 +50,9 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <ComboBox x:Name="LanguageSetting" Height="25" Width="50" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" SelectedIndex="1" SelectionChanged="LanguageSetting_SelectionChanged">
-            <ComboBoxItem x:Name="RusLang" Content="rus"/>
-            <ComboBoxItem x:Name="EngLang" Content="eng"/>
+        <ComboBox x:Name="LanguageSetting" Height="25" Width="55" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" SelectedIndex="1" SelectionChanged="LanguageSetting_SelectionChanged">
+            <ComboBoxItem x:Name="RusLang" Content="рус."/>
+            <ComboBoxItem x:Name="EngLang" Content="eng."/>
         </ComboBox>
         <Label x:Name="LabelCanvasStyle" Content="Canvas style:" HorizontalAlignment="Left" Margin="65,239,0,0" VerticalAlignment="Top" Height="37" FontFamily="Comic Sans MS" FontSize="20" Visibility="Hidden"/>
         <CheckBox x:Name="DefaultCanvas" Content="Default" HorizontalAlignment="Left" Margin="282,250,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Checked="DefaultCanvas_Checked" Visibility="Hidden"/>
@@ -65,7 +65,7 @@
         </ComboBox>
         <Label x:Name="LabelTopPlayer" Content="Top player: " HorizontalAlignment="Left" Margin="94,432,0,0" VerticalAlignment="Top" Height="43" FontFamily="Comic Sans MS" FontSize="18" Visibility="Hidden"/>
         <Label x:Name="LabelBottomPLayer" Content="Bottom player: " HorizontalAlignment="Left" Margin="64,461,0,0" VerticalAlignment="Top" Height="37" FontFamily="Comic Sans MS" FontSize="18" Visibility="Hidden"/>
-        <Label x:Name="LabelGameSettings" Content="Game settings" HorizontalAlignment="Left" Margin="149,195,0,0" VerticalAlignment="Top" Height="44" FontFamily="Comic Sans MS" FontSize="24" Width="185" Visibility="Hidden"/>
+        <Label x:Name="LabelGameSettings" Content="Game settings" HorizontalAlignment="Left" Margin="149,195,0,0" VerticalAlignment="Top" Height="44" FontFamily="Comic Sans MS" FontSize="24" Width="255" Visibility="Hidden"/>
         <Label x:Name="LabelPlayerSettings" Content="Player settings" HorizontalAlignment="Left" Margin="149,382,0,0" VerticalAlignment="Top" Height="46" FontFamily="Comic Sans MS" FontSize="24" Visibility="Hidden"/>
         <ComboBox x:Name="TopPlayerColor" HorizontalAlignment="Left" Margin="200,438,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="TopPlayerColor_SelectionChanged" Visibility="Hidden">
             <ComboBoxItem>

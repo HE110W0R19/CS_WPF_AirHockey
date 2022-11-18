@@ -129,11 +129,11 @@ namespace Class_Work
                 Game.Children.Add(player2.GStick);
                 Canvas.SetTop(this.player2.GStick, 100);
                 Canvas.SetLeft(this.player2.GStick, 185);
-                this.UpPlayerName.Content = $"Player: {player2.GName}";
+                this.UpPlayerName.Content = $"{player2.GName}";
                 this.KeyDown += Key_Move;
             }
 
-            this.DownPlayerName.Content = $"Player: {player1.GName}";
+            this.DownPlayerName.Content = $"{player1.GName}";
 
             Canvas.SetBottom(this.player1.GStick, 100);
             Canvas.SetLeft(this.player1.GStick, 185);

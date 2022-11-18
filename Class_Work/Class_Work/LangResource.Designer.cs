@@ -61,11 +61,74 @@ namespace Class_Work {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на 1(Key) VS 1(mouse).
+        /// </summary>
+        public static string _1_Key__VS_1_mouse_ {
+            get {
+                return ResourceManager.GetString("1(Key) VS 1(mouse)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на (30 - max).
+        /// </summary>
+        public static string _30___max_ {
+            get {
+                return ResourceManager.GetString("(30 - max)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на /sec.
+        /// </summary>
+        public static string _sec {
+            get {
+                return ResourceManager.GetString("/sec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на air hockey.
         /// </summary>
         public static string air_hockey {
             get {
                 return ResourceManager.GetString("air hockey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Bot vs Player(Mouse).
+        /// </summary>
+        public static string Bot_vs_Player_Mouse_ {
+            get {
+                return ResourceManager.GetString("Bot vs Player(Mouse)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Bottom player:.
+        /// </summary>
+        public static string Bottom_player {
+            get {
+                return ResourceManager.GetString("Bottom player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Canvas style:.
+        /// </summary>
+        public static string Canvas_style {
+            get {
+                return ResourceManager.GetString("Canvas style", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Default.
+        /// </summary>
+        public static string Default {
+            get {
+                return ResourceManager.GetString("Default", resourceCulture);
             }
         }
         
@@ -79,6 +142,42 @@ namespace Class_Work {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Game mode:.
+        /// </summary>
+        public static string Game_modes {
+            get {
+                return ResourceManager.GetString("Game modes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Game settings.
+        /// </summary>
+        public static string Game_settings {
+            get {
+                return ResourceManager.GetString("Game settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Game timer:.
+        /// </summary>
+        public static string Game_timer {
+            get {
+                return ResourceManager.GetString("Game timer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Goback.
+        /// </summary>
+        public static string GoBack {
+            get {
+                return ResourceManager.GetString("GoBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на New Game.
         /// </summary>
         public static string New_Game {
@@ -88,11 +187,83 @@ namespace Class_Work {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на One player.
+        /// </summary>
+        public static string One_player {
+            get {
+                return ResourceManager.GetString("One player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Player settings.
+        /// </summary>
+        public static string Player_settings {
+            get {
+                return ResourceManager.GetString("Player settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Realistic.
+        /// </summary>
+        public static string Realistic {
+            get {
+                return ResourceManager.GetString("Realistic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Settings.
         /// </summary>
         public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Settings saved....
+        /// </summary>
+        public static string Settings_saved___ {
+            get {
+                return ResourceManager.GetString("Settings saved...", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Top player:.
+        /// </summary>
+        public static string Top_player {
+            get {
+                return ResourceManager.GetString("Top player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Transparent.
+        /// </summary>
+        public static string Transparent {
+            get {
+                return ResourceManager.GetString("Transparent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Win score:.
+        /// </summary>
+        public static string Win_score {
+            get {
+                return ResourceManager.GetString("Win score", resourceCulture);
             }
         }
     }

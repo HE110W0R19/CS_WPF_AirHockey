@@ -117,16 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="(30 - max)" xml:space="preserve">
+    <value>(30 - max)</value>
+  </data>
+  <data name="/sec" xml:space="preserve">
+    <value>/sec</value>
+  </data>
+  <data name="1(Key) VS 1(mouse)" xml:space="preserve">
+    <value>1(Key) VS 1(mouse)</value>
+  </data>
   <data name="air hockey" xml:space="preserve">
     <value>air hockey</value>
+    <comment>Game name</comment>
+  </data>
+  <data name="Bot vs Player(Mouse)" xml:space="preserve">
+    <value>Bot vs Player(Mouse)</value>
+  </data>
+  <data name="Bottom player" xml:space="preserve">
+    <value>Bottom player:</value>
+  </data>
+  <data name="Canvas style" xml:space="preserve">
+    <value>Canvas style:</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Default</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
+    <comment>Ext button</comment>
+  </data>
+  <data name="Game modes" xml:space="preserve">
+    <value>Game mode:</value>
+  </data>
+  <data name="Game settings" xml:space="preserve">
+    <value>Game settings</value>
+  </data>
+  <data name="Game timer" xml:space="preserve">
+    <value>Game timer:</value>
+  </data>
+  <data name="GoBack" xml:space="preserve">
+    <value>Goback</value>
+    <comment>Go back button</comment>
   </data>
   <data name="New Game" xml:space="preserve">
     <value>New Game</value>
+    <comment>New game button</comment>
+  </data>
+  <data name="One player" xml:space="preserve">
+    <value>One player</value>
+  </data>
+  <data name="Player settings" xml:space="preserve">
+    <value>Player settings</value>
+  </data>
+  <data name="Realistic" xml:space="preserve">
+    <value>Realistic</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+    <comment>Save button</comment>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
+    <comment>Settings button</comment>
+  </data>
+  <data name="Settings saved..." xml:space="preserve">
+    <value>Settings saved...</value>
+  </data>
+  <data name="Top player" xml:space="preserve">
+    <value>Top player:</value>
+  </data>
+  <data name="Transparent" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="Win score" xml:space="preserve">
+    <value>Win score:</value>
   </data>
 </root>

@@ -28,6 +28,8 @@ namespace Class_Work
         {
             this.Puck.Height = 50;
             this.Puck.Width = 50;
+            this.Puck.RadiusX = 100;
+            this.Puck.RadiusY = 100;
             this.Puck.Stroke = Brushes.Black;
             this.Puck.StrokeThickness = 1;
             RadialGradientBrush myRadialGradientBrush = new RadialGradientBrush();

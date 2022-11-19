@@ -61,7 +61,7 @@ namespace Class_Work
     {
         public double MouseCordX = 0;
         public double MouseCordY = 0;
-        public MousePlayer(string Name)
+        public MousePlayer(string Name, SolidColorBrush PlayerColor)
         {
             this.PlayerName = Name.ToString();
             Stick.Height = StickHeight;
@@ -70,6 +70,7 @@ namespace Class_Work
             Stick.StrokeThickness = 2;
             Stick.RadiusX = 100;
             Stick.RadiusY = 100;
+            Stick.Fill = PlayerColor;
         }
     }
 
@@ -77,7 +78,7 @@ namespace Class_Work
     {
         public double KeyCordX = 0;
         public double KeyCordY = 0;
-        public KeyPlayer(string Name)
+        public KeyPlayer(string Name, SolidColorBrush PlayerColor)
         {
             this.PlayerName = Name.ToString();
             Stick.Height = StickHeight;
@@ -86,6 +87,7 @@ namespace Class_Work
             Stick.StrokeThickness = 2;
             Stick.RadiusX = 100;
             Stick.RadiusY = 100;
+            Stick.Fill = PlayerColor;
         }
     }
     /// <summary>
@@ -108,12 +110,12 @@ namespace Class_Work
             this.MaxScore = WinScore;
             if (this.GameMod == 0)
             {
-                player1 = new MousePlayer("MPlayer");
+                player1 = new MousePlayer("MPlayer", BottomStickColor);
             }
             else if (this.GameMod == 1)
             {
-                player1 = new MousePlayer("MPlayer");
-                player2 = new KeyPlayer("KPlayer");
+                player1 = new MousePlayer("MPlayer", BottomStickColor);
+                player2 = new KeyPlayer("KPlayer", TopStickColor);
 
                 Game.Children.Add(player2.GStick);
                 Canvas.SetTop(this.player2.GStick, 100);
@@ -123,8 +125,8 @@ namespace Class_Work
             }
             else if (this.GameMod == 2)
             {
-                player1 = new MousePlayer("MPlayer");
-                player2 = new KeyPlayer("KPlayer");
+                player1 = new MousePlayer("MPlayer", BottomStickColor);
+                player2 = new KeyPlayer("KPlayer", TopStickColor);
 
                 Game.Children.Add(player2.GStick);
                 Canvas.SetTop(this.player2.GStick, 100);

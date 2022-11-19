@@ -173,26 +173,35 @@ namespace Class_Work
 
         private void SaveSettingButton_Click(object sender, RoutedEventArgs e)
         {
-            SoundPlay(1);
-            ButtonAnim(SaveSettingsButton);
+            try
+            {
+                SoundPlay(1);
+                ButtonAnim(SaveSettingsButton);
 
-            SetPlayerColor(this.BottomPlayerColorBrush, BottomPlayerColor);
-            SetPlayerColor(this.TopPlayerColorBrush, TopPlayerColor);
+                SetPlayerColor(ref this.BottomPlayerColorBrush, BottomPlayerColor);
+                SetPlayerColor(ref this.TopPlayerColorBrush, TopPlayerColor);
 
-            this.GameModIndex = GameModBox.SelectedIndex;
+                this.GameModIndex = GameModBox.SelectedIndex;
 
-            this.GameSecTimer = Convert.ToInt32(this.GameTimerTB.Text);
-            this.GameWinScore = Convert.ToInt32(this.GameScoreTB.Text);
+                this.GameSecTimer = Convert.ToInt32(this.GameTimerTB.Text);
+                this.GameWinScore = Convert.ToInt32(this.GameScoreTB.Text);
 
-            if (IsDefaultCanvas)
-                this.IsDefaultCanvas = true;
-            else
-                this.IsDefaultCanvas = false;
+                if (IsDefaultCanvas)
+                    this.IsDefaultCanvas = true;
+                else
+                    this.IsDefaultCanvas = false;
 
-            this.SettingIsSaved.Visibility = Visibility.Visible;
+                this.SettingIsSaved.Visibility = Visibility.Visible;
+            }
+            catch (Exception)
+            {
+                this.GameTimerTB.Text = "86400";
+                this.GameScoreTB.Text = "30";
+                SaveSettingButton_Click(sender, e);
+            }
         }
 
-        private void SetPlayerColor(SolidColorBrush Player, ComboBox ColorBox)
+        private void SetPlayerColor(ref SolidColorBrush Player, ComboBox ColorBox)
         {
             switch (ColorBox.SelectedIndex)
             {
@@ -280,8 +289,7 @@ namespace Class_Work
 
         private void GameTimerTB_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (this.GameTimerTB.Text.Length > 4
-                || this.GameTimerTB.Text.Length == 0)
+            if (this.GameTimerTB.Text.Length > 4)
             {
                 this.GameTimerTB.Text = "86400";
                 this.GameSecTimer = 86400;
@@ -290,11 +298,18 @@ namespace Class_Work
 
         private void GameScoreTB_textChanged(object sender, TextChangedEventArgs e)
         {
-            if (this.GameScoreTB.Text.Length == 0 
-                || Convert.ToInt32(this.GameScoreTB.Text) > 30)
+            try
+            {
+                if (this.GameScoreTB.Text.Length == 0
+                    || Convert.ToInt32(this.GameScoreTB.Text) > 30)
+                {
+                    this.GameScoreTB.Text = "30";
+                    this.GameWinScore = 30;
+                }
+            }
+            catch (Exception)
             {
                 this.GameScoreTB.Text = "30";
-                this.GameWinScore = 30;
             }
         }
     }

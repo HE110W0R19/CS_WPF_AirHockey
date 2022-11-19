@@ -66,7 +66,7 @@ namespace Class_Work
                 this.TopPlayerColor.SelectedIndex = 5;
             }
         }
-
+        
         private void ButtonAnim(System.Windows.Controls.Button button_click)
         {
             TranslateTransform tran = new TranslateTransform();

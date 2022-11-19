@@ -199,8 +199,8 @@ namespace Class_Work
         private void BotMoveLogick(KeyPlayer BBot)
         {
 
-            Canvas.SetTop(player2.GStick, player2.KeyCordY);
-            Canvas.SetLeft(player2.GStick, player2.KeyCordX);
+            Canvas.SetTop(player2.GStick, 50);
+            Canvas.SetLeft(player2.GStick, 190);
         }
 
         private void Bot_Move(object sender, EventArgs e)
@@ -274,7 +274,7 @@ namespace Class_Work
                 && this.puck.CurrentPosX <= Canvas.GetLeft(UpGates) + this.UpGates.Width + 10)
             {
                 SoundPlay(3);
-                if (GameMod > 1)
+                if (GameMod >= 1)
                 {
                     ++player1.Points;
                     EndGame(MaxScore, player1.Points, player2.Points);
@@ -298,7 +298,7 @@ namespace Class_Work
                 && this.puck.CurrentPosX <= Canvas.GetLeft(DownGates) + this.UpGates.Width + 10)
             {
                 SoundPlay(3);
-                if (GameMod > 1)
+                if (GameMod >= 1)
                 {
                     ++this.player2.Points;
                     UpPlayerScore.Content = this.player2.Points.ToString();

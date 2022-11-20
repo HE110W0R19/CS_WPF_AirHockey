@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="BackGround1.bmp" />
     <None Remove="BoardSound.mpeg" />
     <None Remove="images\BackGround.bmp" />
     <None Remove="images\BackGround.png" />
@@ -26,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="BackGround1.bmp" />
     <Resource Include="images\BackGround.png" />
     <Resource Include="images\BackGround1.bmp" />
   </ItemGroup>

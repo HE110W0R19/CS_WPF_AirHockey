@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="450">
     <Window.Background>
-        <ImageBrush ImageSource="/BackGround1.bmp"/>
+        <ImageBrush x:Name="BackPicture" ImageSource="images/BackGround1.bmp"/>
     </Window.Background>
     <Canvas Name="Game" Margin="10,47,10,45">
         <Label Name="Cords" Canvas.Left="-1" Canvas.Top="-18"/>

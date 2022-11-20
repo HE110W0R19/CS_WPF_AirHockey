@@ -2,7 +2,6 @@
 using System.IO;
 using System.IO.Compression;
 using System.Media;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -102,16 +101,28 @@ namespace Class_Work
         HockeyPuck puck = new HockeyPuck();
         int GameMod, Time, MaxScore;
         private DispatcherTimer AnimationTimer = new DispatcherTimer();
-        public MainWindow(bool CanvasStyle, int GameModIndex, int Time, int WinScore, 
-            SolidColorBrush TopStickColor, SolidColorBrush BottomStickColor )
+        public MainWindow(bool CanvasStyle, int GameModIndex, int Time, int WinScore,
+            SolidColorBrush TopStickColor, SolidColorBrush BottomStickColor)
         {
             InitializeComponent();
+
             this.GameMod = GameModIndex;
             this.MaxScore = WinScore;
+
+            if (CanvasStyle == false)
+            {
+                ImageBrush imBrush = new ImageBrush()
+                {
+                    ImageSource = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/images/BackGround.png"))
+                };
+                this.Background = imBrush;
+            }
+            
             if (this.GameMod == 0)
             {
                 player1 = new MousePlayer("MPlayer", BottomStickColor);
             }
+
             else if (this.GameMod == 1)
             {
                 player1 = new MousePlayer("MPlayer", BottomStickColor);
@@ -123,6 +134,7 @@ namespace Class_Work
                 this.UpPlayerName.Content = $"Player: {player2.GName}";
                 AnimationTimer.Tick += Bot_Move;
             }
+
             else if (this.GameMod == 2)
             {
                 player1 = new MousePlayer("MPlayer", BottomStickColor);
@@ -149,7 +161,7 @@ namespace Class_Work
             AnimationTimer.Interval = TimeSpan.FromSeconds(0.05);
             AnimationTimer.Tick += Anim;
             AnimationTimer.Start();
-            
+
         }
 
         private void MoveMouseLogick(MouseEventArgs e, MousePlayer MPlayer)

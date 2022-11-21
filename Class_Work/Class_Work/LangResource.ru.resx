@@ -136,6 +136,9 @@
   <data name="Bottom player" xml:space="preserve">
     <value>      Нижний:</value>
   </data>
+  <data name="Bottom player Name:" xml:space="preserve">
+    <value>Имя нижн. игрока:</value>
+  </data>
   <data name="Canvas style" xml:space="preserve">
     <value>Стиль доски:</value>
   </data>
@@ -188,6 +191,9 @@
   </data>
   <data name="Top player" xml:space="preserve">
     <value>Верхний:</value>
+  </data>
+  <data name="Top player Name:" xml:space="preserve">
+    <value>Имя верх. игрока:</value>
   </data>
   <data name="Transparent" xml:space="preserve">
     <value>Прозрачный</value>

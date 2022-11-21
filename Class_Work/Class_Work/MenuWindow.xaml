@@ -26,7 +26,23 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label x:Name="Lastlabel" Content="Last Games" HorizontalAlignment="Left" Margin="157,208,0,0" VerticalAlignment="Top" Width="146" FontSize="16" FontFamily="Segoe Print">
+        <Label x:Name="TopPlayerNameLabel" Content="Top player Name:" HorizontalAlignment="Left" Margin="80,449,0,0" VerticalAlignment="Top">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF02DFFF"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="BottomPlayerNameLabel" Content="Bottom player Name:" HorizontalAlignment="Left" Margin="65,414,0,0" VerticalAlignment="Top">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF02DFFF"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="Lastlabel" Content="Last Games" HorizontalAlignment="Left" Margin="157,184,0,0" VerticalAlignment="Top" Width="146" FontSize="16" FontFamily="Segoe Print">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFFD300" Offset="0"/>
@@ -155,14 +171,14 @@
         <TextBox x:Name="GameScoreTB" HorizontalAlignment="Left" Margin="200,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="37" Background="#FFE5E5E5" OpacityMask="#FFACACAC" FontSize="14" Text="10" TextAlignment="Center" Visibility="Hidden" TextChanged="GameScoreTB_textChanged"/>
         <Label x:Name="LabelMaxCount" Content="(30 - max)" HorizontalAlignment="Left" Margin="237,345,0,0" VerticalAlignment="Top" Height="29" Width="81" FontSize="16" Visibility="Hidden"/>
 
-        <Label x:Name="LastGamesLabel" Margin="64,237,64,209" BorderThickness="2,2,2,2" Background="{x:Null}">
+        <Label x:Name="LastGamesLabel" Margin="64,213,64,275" BorderThickness="2,2,2,2" Background="{x:Null}">
             <Label.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF00FAFF" Offset="0.99"/>
                     <GradientStop Color="#FF007AFF"/>
                 </LinearGradientBrush>
             </Label.BorderBrush>
-            <TextBlock x:Name="LastGames" TextWrapping="Wrap" Height="224" Width="312" TextAlignment="Center" FontFamily="Segoe Print">
+            <TextBlock x:Name="LastGames" TextWrapping="Wrap" Height="186" Width="312" TextAlignment="Center" FontFamily="Segoe Print">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFE1FF05" Offset="1"/>
@@ -171,5 +187,49 @@
                 </TextBlock.Foreground>
             </TextBlock>
         </Label>
+        <TextBox x:Name="BottomPlayernameTB" HorizontalAlignment="Left" Margin="188,418,0,0" Text="Mouse Player" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Background="{x:Null}" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" TextChanged="BottomPlayernameTB_TextChanged">
+            <TextBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF4FF00"/>
+                    <GradientStop Color="#FFF400FF" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Foreground>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FFFFF700" Offset="0"/>
+                    <GradientStop Color="#FF00FFFA" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="TopPlayernameTB" HorizontalAlignment="Left" Margin="187,453,0,0" Text="Key Player" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" TextChanged="TopPlayernameTB_TextChanged">
+            <TextBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF4FF00" Offset="0"/>
+                    <GradientStop Color="#FFF400FF" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Foreground>
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FFFFF700" Offset="0"/>
+                    <GradientStop Color="#FF00FFFA" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
     </Grid>
 </Window>

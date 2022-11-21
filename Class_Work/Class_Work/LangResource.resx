@@ -136,6 +136,9 @@
   <data name="Bottom player" xml:space="preserve">
     <value>Bottom player:</value>
   </data>
+  <data name="Bottom player Name:" xml:space="preserve">
+    <value>Bottom player Name:</value>
+  </data>
   <data name="Canvas style" xml:space="preserve">
     <value>Canvas style:</value>
   </data>
@@ -188,6 +191,9 @@
   </data>
   <data name="Top player" xml:space="preserve">
     <value>Top player:</value>
+  </data>
+  <data name="Top player Name:" xml:space="preserve">
+    <value>Top player Name:</value>
   </data>
   <data name="Transparent" xml:space="preserve">
     <value>Transparent</value>

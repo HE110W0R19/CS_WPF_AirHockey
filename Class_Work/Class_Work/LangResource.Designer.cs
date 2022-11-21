@@ -115,6 +115,15 @@ namespace Class_Work {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Bottom player Name:.
+        /// </summary>
+        public static string Bottom_player_Name_ {
+            get {
+                return ResourceManager.GetString("Bottom player Name:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Canvas style:.
         /// </summary>
         public static string Canvas_style {
@@ -255,6 +264,15 @@ namespace Class_Work {
         public static string Top_player {
             get {
                 return ResourceManager.GetString("Top player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Top player Name:.
+        /// </summary>
+        public static string Top_player_Name_ {
+            get {
+                return ResourceManager.GetString("Top player Name:", resourceCulture);
             }
         }
         

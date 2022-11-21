@@ -38,7 +38,7 @@ namespace Class_Work
                 string all_text = sr.ReadToEnd();
                 sr.Close();
                 string[] buf = all_text.Split(';');
-                for(int i = buf.Length-1; i > 0; --i)
+                for (int i = buf.Length - 1; i > 0; --i)
                 {
                     this.LastGames.Text += buf[i] + "\n";
                 }
@@ -52,6 +52,8 @@ namespace Class_Work
             this.SettingsButton.Content = LangResource.Settings;
             this.ExitButton.Content = LangResource.Exit;
             this.Lastlabel.Content = LangResource.Last_Games;
+            this.BottomPlayerNameLabel.Content = LangResource.Bottom_player_Name_;
+            this.TopPlayerNameLabel.Content = LangResource.Top_player_Name_;
 
             if (IsMenu == true)
             {
@@ -114,7 +116,8 @@ namespace Class_Work
         private void NewGameButton_Click(object sender, RoutedEventArgs e)
         {
             new MainWindow(this.IsDefaultCanvas, this.GameModIndex, this.GameSecTimer,
-                this.GameWinScore, this.TopPlayerColorBrush, this.BottomPlayerColorBrush).Show();
+                this.GameWinScore, this.TopPlayerColorBrush, this.BottomPlayerColorBrush,
+                this.BottomPlayernameTB.Text, this.TopPlayernameTB.Text).Show();
             SoundPlay(3);
             this.Close();
         }
@@ -127,6 +130,10 @@ namespace Class_Work
             this.ExitButton.Visibility = Visibility.Hidden;
             this.LastGamesLabel.Visibility = Visibility.Hidden;
             this.Lastlabel.Visibility = Visibility.Hidden;
+            this.BottomPlayernameTB.Visibility = Visibility.Hidden;
+            this.TopPlayernameTB.Visibility = Visibility.Hidden;
+            this.TopPlayerNameLabel.Visibility = Visibility.Hidden;
+            this.BottomPlayerNameLabel.Visibility = Visibility.Hidden;
 
             this.LabelGameSettings.Visibility = Visibility.Visible;
             this.LabelCanvasStyle.Visibility = Visibility.Visible;
@@ -281,6 +288,10 @@ namespace Class_Work
             this.ExitButton.Visibility = Visibility.Visible;
             this.LastGamesLabel.Visibility = Visibility.Visible;
             this.Lastlabel.Visibility = Visibility.Visible;
+            this.BottomPlayernameTB.Visibility = Visibility.Visible;
+            this.TopPlayernameTB.Visibility = Visibility.Visible;
+            this.TopPlayerNameLabel.Visibility = Visibility.Visible;
+            this.BottomPlayerNameLabel.Visibility = Visibility.Visible;
 
             this.LabelGameSettings.Visibility = Visibility.Hidden;
             this.LabelCanvasStyle.Visibility = Visibility.Hidden;
@@ -328,6 +339,22 @@ namespace Class_Work
             catch (Exception)
             {
                 this.GameScoreTB.Text = "30";
+            }
+        }
+
+        private void BottomPlayernameTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (this.BottomPlayernameTB.Text.Length < 1)
+            {
+                this.BottomPlayernameTB.Text = "Mouse Player";
+            }
+        }
+
+        private void TopPlayernameTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (this.TopPlayernameTB.Text.Length < 1)
+            {
+                this.TopPlayernameTB.Text = "Key Player";
             }
         }
     }

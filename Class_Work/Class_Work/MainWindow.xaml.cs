@@ -102,7 +102,7 @@ namespace Class_Work
         int GameMod, Time, MaxScore;
         private DispatcherTimer AnimationTimer = new DispatcherTimer();
         public MainWindow(bool CanvasStyle, int GameModIndex, int Time, int WinScore,
-            SolidColorBrush TopStickColor, SolidColorBrush BottomStickColor)
+            SolidColorBrush TopStickColor, SolidColorBrush BottomStickColor, string BottomName, string TopName)
         {
             InitializeComponent();
 
@@ -120,13 +120,13 @@ namespace Class_Work
 
             if (this.GameMod == 0)
             {
-                player1 = new MousePlayer("Mouse", BottomStickColor);
+                player1 = new MousePlayer(BottomName, BottomStickColor);
             }
 
             else if (this.GameMod == 1)
             {
-                player1 = new MousePlayer("Mouse", BottomStickColor);
-                player2 = new KeyPlayer("Key", TopStickColor);
+                player1 = new MousePlayer(BottomName, BottomStickColor);
+                player2 = new KeyPlayer(TopName, TopStickColor);
 
                 Game.Children.Add(player2.GStick);
                 Canvas.SetTop(this.player2.GStick, 100);
@@ -137,8 +137,8 @@ namespace Class_Work
 
             else if (this.GameMod == 2)
             {
-                player1 = new MousePlayer("Mouse", BottomStickColor);
-                player2 = new KeyPlayer("Key", TopStickColor);
+                player1 = new MousePlayer(BottomName, BottomStickColor);
+                player2 = new KeyPlayer(TopName, TopStickColor);
 
                 Game.Children.Add(player2.GStick);
                 Canvas.SetTop(this.player2.GStick, 100);

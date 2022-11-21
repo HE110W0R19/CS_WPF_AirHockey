@@ -35,8 +35,13 @@ namespace Class_Work
             string FilePath = @"Scores\GameScore.txt";
             using (StreamReader sr = File.OpenText(FilePath))
             {
-                this.LastGames.Text = sr.ReadToEnd();
+                string all_text = sr.ReadToEnd();
                 sr.Close();
+                string[] buf = all_text.Split(';');
+                for(int i = buf.Length-1; i > 0; --i)
+                {
+                    this.LastGames.Text += buf[i] + "\n";
+                }
             }
         }
 

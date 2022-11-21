@@ -120,13 +120,13 @@ namespace Class_Work
 
             if (this.GameMod == 0)
             {
-                player1 = new MousePlayer("MPlayer", BottomStickColor);
+                player1 = new MousePlayer("Mouse", BottomStickColor);
             }
 
             else if (this.GameMod == 1)
             {
-                player1 = new MousePlayer("MPlayer", BottomStickColor);
-                player2 = new KeyPlayer("KPlayer", TopStickColor);
+                player1 = new MousePlayer("Mouse", BottomStickColor);
+                player2 = new KeyPlayer("Key", TopStickColor);
 
                 Game.Children.Add(player2.GStick);
                 Canvas.SetTop(this.player2.GStick, 100);
@@ -137,8 +137,8 @@ namespace Class_Work
 
             else if (this.GameMod == 2)
             {
-                player1 = new MousePlayer("MPlayer", BottomStickColor);
-                player2 = new KeyPlayer("KPlayer", TopStickColor);
+                player1 = new MousePlayer("Mouse", BottomStickColor);
+                player2 = new KeyPlayer("Key", TopStickColor);
 
                 Game.Children.Add(player2.GStick);
                 Canvas.SetTop(this.player2.GStick, 100);
@@ -164,15 +164,15 @@ namespace Class_Work
 
         }
 
-        private void MoveMouseLogick(MouseEventArgs e, MousePlayer MPlayer)
+        private void MoveMouseLogick(MouseEventArgs e, MousePlayer Mouse)
         {
-            MPlayer.MouseCordX = e.GetPosition(Game).X;
-            MPlayer.MouseCordY = e.GetPosition(Game).Y;
-            if (MPlayer.MouseCordX >= 7 && MPlayer.MouseCordX <= 407
-                && MPlayer.MouseCordY >= 305 && MPlayer.MouseCordY <= 576)
+            Mouse.MouseCordX = e.GetPosition(Game).X;
+            Mouse.MouseCordY = e.GetPosition(Game).Y;
+            if (Mouse.MouseCordX >= 7 && Mouse.MouseCordX <= 407
+                && Mouse.MouseCordY >= 305 && Mouse.MouseCordY <= 576)
             {
-                Canvas.SetLeft(player1.GStick, MPlayer.MouseCordX - 10);
-                Canvas.SetTop(player1.GStick, MPlayer.MouseCordY - 10);
+                Canvas.SetLeft(player1.GStick, Mouse.MouseCordX - 10);
+                Canvas.SetTop(player1.GStick, Mouse.MouseCordY - 10);
             }
             //this.MouseCords.Content = $"X:{e.GetPosition(Game).X} Y:{e.GetPosition(Game).Y}";
         }
@@ -380,9 +380,9 @@ namespace Class_Work
         {
             string FilePath = @"Scores\GameScore.txt";
             if (GameMod >= 1)
-                File.AppendAllText(FilePath, $"Player {player1.GName} : {player1.Points} (VS) Player {player2.GName} : {player2.Points}");
+                File.AppendAllText(FilePath, $";Player {player1.GName} : {player1.Points} (VS) Player {player2.GName} : {player2.Points}");
             else
-                File.AppendAllText(FilePath, $"Player {player1.GName} : {player1.Points} - (One Player)");
+                File.AppendAllText(FilePath, $";Player {player1.GName} : {player1.Points} - (One Player)");
         }
 
         public void EndGame(int Max, int BottomPlayerPoints, int TopPlayerPoints = 0)

@@ -10,8 +10,9 @@
         <ImageBrush x:Name="BackPicture" ImageSource="images/BackGround1.bmp"/>
     </Window.Background>
     <Canvas Name="Game" Margin="10,47,10,45">
-        <Label Name="Cords" Canvas.Left="-1" Canvas.Top="-18"/>
-        <Label Name="MouseCords" Canvas.Left="-1" Canvas.Top="-28"/>
+        <!--<Label Name="Cords" Canvas.Left="-1" Canvas.Top="-18"/>-->
+        <!--<Label Name="MouseCords" Canvas.Left="-1" Canvas.Top="-28"/>-->
+        
         <Label x:Name="UpGates" Canvas.Top="0" Canvas.Left="160" Width="96" Height="4" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -28,6 +29,7 @@
                 </RadialGradientBrush>
             </Label.Background>
         </Label>
+        
         <Label x:Name="DownGates" Canvas.Bottom="0" Canvas.Left="160" Width="96" Height="4">
             <Label.Background>
                 <RadialGradientBrush>
@@ -36,8 +38,11 @@
                 </RadialGradientBrush>
             </Label.Background>
         </Label>
+        
         <Label x:Name="UpPlayerScore" Content="0" Canvas.Left="4" Canvas.Top="222" Foreground="#FF9000FF" Height="62" Width="66" FontSize="40" FontFamily="MV Boli" FontWeight="Normal" FontStyle="Normal"/>
+        
         <Label x:Name="DownPlayerScore" Content="0" Canvas.Left="4" Canvas.Top="273" Foreground="#FF9000FF" Height="62" Width="66" FontSize="40" FontFamily="MV Boli" FontWeight="Normal" FontStyle="Normal"/>
+        
         <Button Content="Menu" Canvas.Left="-1" Canvas.Top="579" Width="71" Height="23" FontFamily="MV Boli" FontSize="16" FontStyle="Normal" Foreground="Black" BorderBrush="#FF3D00FF" Click="Button_Click">
             <Button.Background>
                 <RadialGradientBrush>
@@ -46,8 +51,11 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
+        
         <Label x:Name="DownPlayerName" Canvas.Left="112" Width="192" BorderBrush="#FF030303" Foreground="#7F000000" FontFamily="MV Boli" FontWeight="Bold" FlowDirection="LeftToRight" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Height="30" Canvas.Top="481" Content="" Background="Transparent" FontSize="16"/>
+        
         <Label x:Name="UpPlayerName" Canvas.Left="110" Canvas.Top="53" Width="192" BorderBrush="#FF030303" Foreground="#7F000000" FontFamily="MV Boli" FontWeight="Bold" FlowDirection="LeftToRight" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Height="30" FontSize="16"/>
+        
         <Label x:Name="TopWinner" Canvas.Left="4" Height="284" Width="404" Visibility="Hidden">
             <Label.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -55,6 +63,7 @@
                     <GradientStop Color="#7F00FF1F" Offset="0"/>
                 </LinearGradientBrush>
             </Label.Background>
+            
             <TextBlock Text="!!! Winner !!!" Padding="0,0,0,3" VerticalAlignment="Center" HorizontalAlignment="Left" Height="137" Margin="55,120,0,0" RenderTransformOrigin="0.5,0.5" FontSize="48" FontFamily="Comic Sans MS" FontStyle="Italic">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -80,6 +89,8 @@
                 </TextBlock.RenderTransform>
             </TextBlock>
         </Label>
+        
+        
         <Label x:Name="BottomWinner" Canvas.Left="4" Height="278" Width="404" Canvas.Top="290" Foreground="#FFD900FF" FontSize="48" FontStyle="Italic" FontStretch="Normal" FontWeight="Normal" FontFamily="Comic Sans MS" Visibility="Hidden">
             <Label.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -87,6 +98,8 @@
                     <GradientStop Color="#7F00FF1F" Offset="1"/>
                 </LinearGradientBrush>
             </Label.Background>
+            
+            
             <TextBlock Text="!!! Winner !!!" Padding="0,0,0,3" VerticalAlignment="Center" HorizontalAlignment="Left" Height="137" Margin="55,120,0,0" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -120,6 +133,8 @@
                     <GradientStop Color="#7FFF0000" Offset="0"/>
                 </LinearGradientBrush>
             </Label.Background>
+            
+            
             <TextBlock Text="!!! Lose !!!" Padding="0,0,0,3" VerticalAlignment="Center" HorizontalAlignment="Left" Height="137" Margin="90,120,0,0" RenderTransformOrigin="0.5,0.5" FontSize="48" FontFamily="Comic Sans MS" FontStyle="Italic">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -145,6 +160,8 @@
                 </TextBlock.RenderTransform>
             </TextBlock>
         </Label>
+        
+        
         <Label x:Name="BottomLose" Canvas.Left="4" Height="278" Width="404" Canvas.Top="290" Foreground="#FFD900FF" FontSize="48" FontStyle="Italic" FontStretch="Normal" FontWeight="Normal" FontFamily="Comic Sans MS" Visibility="Hidden">
             <Label.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -152,6 +169,8 @@
                     <GradientStop Color="#7FFF0000" Offset="1"/>
                 </LinearGradientBrush>
             </Label.Background>
+            
+            
             <TextBlock Text="!!! Lose !!!" Padding="0,0,0,3" VerticalAlignment="Center" HorizontalAlignment="Left" Height="137" Margin="90,120,0,0" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -159,6 +178,7 @@
                         <GradientStop Color="#FF007AFF" Offset="1"/>
                     </LinearGradientBrush>
                 </TextBlock.Foreground>
+                
                 <TextBlock.LayoutTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="1"/>
@@ -167,6 +187,7 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </TextBlock.LayoutTransform>
+                
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -175,7 +196,11 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </TextBlock.RenderTransform>
+                
             </TextBlock>
         </Label>
+        
+        
+        
     </Canvas>
 </Window>

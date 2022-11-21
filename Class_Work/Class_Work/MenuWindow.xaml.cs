@@ -31,6 +31,13 @@ namespace Class_Work
             this.GameWinScore = Convert.ToInt32(GameScoreTB.Text);
             this.BottomPlayerColorBrush = Brushes.Transparent;
             this.TopPlayerColorBrush = Brushes.Transparent;
+
+            string FilePath = @"Scores\GameScore.txt";
+            using (StreamReader sr = File.OpenText(FilePath))
+            {
+                this.LastGames.Text = sr.ReadToEnd();
+                sr.Close();
+            }
         }
 
         public void ChangeLanguage()
@@ -66,7 +73,7 @@ namespace Class_Work
                 this.TopPlayerColor.SelectedIndex = 5;
             }
         }
-        
+
         private void ButtonAnim(System.Windows.Controls.Button button_click)
         {
             TranslateTransform tran = new TranslateTransform();

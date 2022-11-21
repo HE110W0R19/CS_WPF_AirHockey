@@ -117,7 +117,7 @@ namespace Class_Work
                 };
                 this.Background = imBrush;
             }
-            
+
             if (this.GameMod == 0)
             {
                 player1 = new MousePlayer("MPlayer", BottomStickColor);
@@ -174,7 +174,7 @@ namespace Class_Work
                 Canvas.SetLeft(player1.GStick, MPlayer.MouseCordX - 10);
                 Canvas.SetTop(player1.GStick, MPlayer.MouseCordY - 10);
             }
-            this.MouseCords.Content = $"X:{e.GetPosition(Game).X} Y:{e.GetPosition(Game).Y}";
+            //this.MouseCords.Content = $"X:{e.GetPosition(Game).X} Y:{e.GetPosition(Game).Y}";
         }
 
         private void Move_mouse(object sender, MouseEventArgs user_mouse)
@@ -342,7 +342,7 @@ namespace Class_Work
             {
                 Canvas.SetLeft(puck.GPuck, this.puck.CurrentPosX);
                 Canvas.SetTop(puck.GPuck, this.puck.CurrentPosY);
-                Cords.Content = $"Cords: X:{this.puck.CurrentPosX} Y:{this.puck.CurrentPosY}";
+                //Cords.Content = $"Cords: X:{this.puck.CurrentPosX} Y:{this.puck.CurrentPosY}";
             }
             puck.SpeedX *= 1.001;
             puck.SpeedY *= 1.001;
@@ -376,6 +376,15 @@ namespace Class_Work
             }
         }
 
+        private void SaveGameToFile()
+        {
+            string FilePath = @"Scores\GameScore.txt";
+            if (GameMod >= 1)
+                File.AppendAllText(FilePath, $"Player {player1.GName} : {player1.Points} (VS) Player {player2.GName} : {player2.Points}");
+            else
+                File.AppendAllText(FilePath, $"Player {player1.GName} : {player1.Points} - (One Player)");
+        }
+
         public void EndGame(int Max, int BottomPlayerPoints, int TopPlayerPoints = 0)
         {
             if (BottomPlayerPoints == Max)
@@ -400,6 +409,7 @@ namespace Class_Work
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            SaveGameToFile();
             new MenuWindow().Show();
             SoundPlay(4);
             AnimationTimer.Stop();

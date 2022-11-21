@@ -159,6 +159,9 @@
     <value>Goback</value>
     <comment>Go back button</comment>
   </data>
+  <data name="Last Games" xml:space="preserve">
+    <value>Last Games</value>
+  </data>
   <data name="New Game" xml:space="preserve">
     <value>New Game</value>
     <comment>New game button</comment>

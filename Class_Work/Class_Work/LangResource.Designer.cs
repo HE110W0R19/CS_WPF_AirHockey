@@ -178,6 +178,15 @@ namespace Class_Work {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Last Games.
+        /// </summary>
+        public static string Last_Games {
+            get {
+                return ResourceManager.GetString("Last Games", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на New Game.
         /// </summary>
         public static string New_Game {

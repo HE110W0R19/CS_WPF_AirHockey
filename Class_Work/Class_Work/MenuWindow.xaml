@@ -26,6 +26,14 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
+        <Label x:Name="Lastlabel" Content="Last Games" HorizontalAlignment="Left" Margin="157,208,0,0" VerticalAlignment="Top" Width="146" FontSize="16" FontFamily="Segoe Print">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFD300" Offset="0"/>
+                    <GradientStop Color="#FF00CDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
         <Button x:Name="NewGameButton" Content="New Game" HorizontalAlignment="Center" Margin="0,485,0,0" VerticalAlignment="Top" Height="40" Width="250" Background="#190000FF" BorderBrush="Aqua" FontFamily="Comic Sans MS" FontWeight="Normal" FontSize="24" Click="NewGameButton_Click" Visibility="Visible">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -147,7 +155,7 @@
         <TextBox x:Name="GameScoreTB" HorizontalAlignment="Left" Margin="200,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="37" Background="#FFE5E5E5" OpacityMask="#FFACACAC" FontSize="14" Text="10" TextAlignment="Center" Visibility="Hidden" TextChanged="GameScoreTB_textChanged"/>
         <Label x:Name="LabelMaxCount" Content="(30 - max)" HorizontalAlignment="Left" Margin="237,345,0,0" VerticalAlignment="Top" Height="29" Width="81" FontSize="16" Visibility="Hidden"/>
 
-        <Label Margin="64,237,64,209" BorderThickness="2,2,2,2" Background="{x:Null}">
+        <Label x:Name="LastGamesLabel" Margin="64,237,64,209" BorderThickness="2,2,2,2" Background="{x:Null}">
             <Label.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF00FAFF" Offset="0.99"/>
@@ -159,16 +167,6 @@
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFE1FF05" Offset="1"/>
                         <GradientStop Color="#FFFF2500" Offset="0"/>
-                    </LinearGradientBrush>
-                </TextBlock.Foreground>
-            </TextBlock>
-        </Label>
-        <Label HorizontalAlignment="Left" Margin="130,204,0,0" VerticalAlignment="Top" Width="185" FontFamily="Comic Sans MS" FontSize="16">
-            <TextBlock Text="Last Games"  TextAlignment="Center" FlowDirection="LeftToRight" Width="175" Height="22">
-                <TextBlock.Foreground>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF00A8FF" Offset="1"/>
-                        <GradientStop Color="#FFD0FF00"/>
                     </LinearGradientBrush>
                 </TextBlock.Foreground>
             </TextBlock>

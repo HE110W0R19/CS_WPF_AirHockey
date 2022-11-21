@@ -46,6 +46,8 @@ namespace Class_Work
             this.NewGameButton.Content = LangResource.New_Game;
             this.SettingsButton.Content = LangResource.Settings;
             this.ExitButton.Content = LangResource.Exit;
+            this.Lastlabel.Content = LangResource.Last_Games;
+
             if (IsMenu == true)
             {
                 this.SaveSettingsButton.Content = LangResource.Save;
@@ -118,6 +120,8 @@ namespace Class_Work
             this.NewGameButton.Visibility = Visibility.Hidden;
             this.SettingsButton.Visibility = Visibility.Hidden;
             this.ExitButton.Visibility = Visibility.Hidden;
+            this.LastGamesLabel.Visibility = Visibility.Hidden;
+            this.Lastlabel.Visibility = Visibility.Hidden;
 
             this.LabelGameSettings.Visibility = Visibility.Visible;
             this.LabelCanvasStyle.Visibility = Visibility.Visible;
@@ -270,6 +274,8 @@ namespace Class_Work
             this.NewGameButton.Visibility = Visibility.Visible;
             this.SettingsButton.Visibility = Visibility.Visible;
             this.ExitButton.Visibility = Visibility.Visible;
+            this.LastGamesLabel.Visibility = Visibility.Visible;
+            this.Lastlabel.Visibility = Visibility.Visible;
 
             this.LabelGameSettings.Visibility = Visibility.Hidden;
             this.LabelCanvasStyle.Visibility = Visibility.Hidden;

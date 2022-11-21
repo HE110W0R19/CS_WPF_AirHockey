@@ -47,7 +47,7 @@ namespace Class_Work
 
         public void ChangeLanguage()
         {
-            this.GameName.Content = LangResource.air_hockey;
+            this.GameName.Content = LangResource.AirHockey;
             this.NewGameButton.Content = LangResource.New_Game;
             this.SettingsButton.Content = LangResource.Settings;
             this.ExitButton.Content = LangResource.Exit;

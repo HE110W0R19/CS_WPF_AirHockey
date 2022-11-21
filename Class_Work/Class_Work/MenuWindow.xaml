@@ -14,7 +14,7 @@
                 <GradientStop Color="#FF6F2BA3" Offset="0.765"/>
             </RadialGradientBrush>
         </Grid.Background>
-        <Label x:Name="GameName" Content="air hockey" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="" Height="118" Width="322" FontSize="72" FontFamily="Ink Free" Margin="0,104,0,0" FontWeight="Bold" FontStyle="Normal" Background="#00000000">
+        <Label x:Name="GameName" Content="AirHockey" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="" Height="118" Width="322" FontSize="72" FontFamily="Ink Free" Margin="0,104,0,0" FontWeight="Bold" FontStyle="Normal" Background="#00000000">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF97FC00" Offset="0.144"/>

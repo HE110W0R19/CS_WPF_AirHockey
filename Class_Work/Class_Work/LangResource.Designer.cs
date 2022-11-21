@@ -88,11 +88,11 @@ namespace Class_Work {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на air hockey.
+        ///   Ищет локализованную строку, похожую на AirHockey.
         /// </summary>
-        public static string air_hockey {
+        public static string AirHockey {
             get {
-                return ResourceManager.GetString("air hockey", resourceCulture);
+                return ResourceManager.GetString("AirHockey", resourceCulture);
             }
         }
         
